@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+*
+{
+margin:0xp;
+padding:0px;
+}
+li
+{
+	list-style:none;
+	font-size:150px;
+	font-weight:800;
+	float:left;
+	margin-left:50px;
+}
+</style>
+
+<script>
+window.onload=function(){
+	var arr=["A","B","C","D","E","F","G"];
+	
+	
+	//给window绑定键盘按下事件
+	window.onkeydown=function(e){
+	//获得事件对象
+    var ev=window.event||e;	
+	//获得按下的是哪个键
+	var word=String.fromCharCode(ev.keyCode);
+	//抓取所有的li标签
+	var list=document.getElementById("list");
+	var ls=document.getElementsByTagName("li");
+	//循环li，对比按下的键是否和li的内容一样，如果一样，删除li
+	for(var i=0;i<ls.length;i++){
+	  if(ls[i].innerHTML==word){
+	//删除i的li
+	 list.removeChild(ls[i]);
+	 
+	 
+	 //生成随机数
+	 var num=
+	 Math.floor(Math.random()*(arr.length-1+1-0)+0);
+	 //创建li标签
+	 var newLi=document.createElement("li");
+	 //给新的li设置新的内容
+	 newLi.innerHTML=arr[num];
+	 //将新的值插入ul中
+	 list.appendChild(newLi);
+	 break;
+	 
+		  
+		  
+	  }
+		
+	}
+}
+
+}
+</script>
+</head>
+
+<body>
+<ul id="list">
+<li>A</li>
+<li>B</li>
+<li>C</li>
+<li>D</li>
+<li>E</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var span= document.getElementById("title").getElementsByTagName("span")[0];
+	setInterval(function(){
+		//获得当前的值
+		var oldnum=span.innerHTML;
+		//计算新的值
+		var newnum=oldnum-1;
+		//将新的值赋值回去
+		span.innerHTML=newnum;
+		//计算边界 跳转
+		if(newnum==1){
+			location.assign("https://www.baidu.com");
+		}
+	},1000)
+}
+
+
+</script>
+</head>
+
+<body>
+<h1 id="title">秦，页面没找到，<span>5</span>秒后跳回首页<img src="images/09.jpg"/></h1>
+</body>
+</html>

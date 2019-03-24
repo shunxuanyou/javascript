@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+    <style type="text/css">
+        #dan{
+            position: relative;
+            top: 50px;
+        }
+        #qb{
+            position: absolute;
+            left: 840px;
+            top: 100px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+//				抓取元素
+            var btn=document.getElementById("btn");
+            var dan=document.getElementById("dan");
+            var speed=10;
+//				给按钮添加单击事件
+            btn.onclick=function(){
+//					设置定时器,每隔一秒钟,将left的值变大10px
+                var timer=setInterval(function(){
+//						获得当前图片的left的值
+                    var old_left=dan.style.left;
+//						计算新的left的值
+                    var new_left=parseInt(old_left)+speed;
+//						将新值赋值回去
+                    dan.style.left=new_left+"px";
+
+//						判断是否该停止了
+// 						if(new_left==600){
+// //							清理定时器,让运动停止
+// //							clearInterval(timer);
+// 							alert("撞墙了！！！");
+// 							speed=-10;
+// 						}
+// 						if(new_left==0){
+// 							speed=10;
+// 						}
+                    // 图片往返跑
+                    if(new_left==600||new_left==0){
+                        speed=speed*-1;
+                    }
+
+                },10)
+            }
+        }
+    </script>
+</head>
+<body>
+<p><input type="button" value="远动原理" id="btn"/></p>
+<img src="images/huli.gif" id="dan" style="left: 0;"/>
+<img src="images/qb.png" id="qb"/>
+</body>
+</html>

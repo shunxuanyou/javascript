@@ -1,0 +1,109 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+*
+{
+	padding:0;
+	margin:0;
+}
+#tp
+{
+	width:900px;
+	height:500px;
+	background:url(images/09.jpg) no-repeat;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+	
+</style>
+
+<script>
+window.onload=function(){
+	var tp=document.getElementById("tp");
+	
+	var huli=document.getElementById("huli");
+	
+	
+     //获得页面可视区域的宽高
+	  var win_width=document.documentElement.clientWidth;
+	  var win_height=document.documentElement.clientHeight;
+	 //计算可以到达最大的top和tleft的值
+	 var max_left=win_width-tp.offsetWidth;
+	 var max_top=win_height-tp.offsetHeight;
+	 var x=1,y=1;
+	 
+     //设置定时器，每隔一点时间就改变一下left、top的值
+	 //var timer=setInterval(function(){
+		 
+		 function run(){
+			 
+	 //获得旧的left和top的值
+	 var old_left=tp.offsetLeft;
+	 var old_top=tp.offsetTop;
+	 //计算的left和top的值
+	var new_left=old_left+x;
+	var new_top=old_top+y;
+	 //将新值赋值回去
+	 tp.style.left=new_left+"px";
+	 tp.style.top=new_top+"px";
+	
+	
+	 if(new_top==max_top){
+		 y=-1;
+	 }
+	 
+	 if(new_top==0){
+		 y=1;
+		 
+	 }
+	 if(new_left==max_left){
+		 x=-1;
+		 
+	 }
+	 if(new_left==0){
+		 x=1;
+		 
+	 }
+	 
+	
+	 }
+	 0
+
+	 //设置定时器，每隔一点时间就改变一下left、top的值
+	 var timer=setInterval(run,1000);
+	 
+		
+	//给tp加移入事件
+	tp.onmouseover=function(){
+	//停止定时器
+		clearInterval(timer);	
+	}
+	
+	 //移出事件
+	 tp.onmouseout=function(){
+	 //恢复定时器
+	 timer=setInterval(run,3);	
+	 }
+		 
+	 //点击关闭 
+	 huli.onclick=function(){
+	 //让图片隐藏
+	 tp.style.display="none";
+		 
+	 }
+	
+}
+	
+
+</script>
+</head>
+
+<body>
+<div id="tp"><img src="images/huli.gif" id="huli"/></div>
+</body>
+</html>

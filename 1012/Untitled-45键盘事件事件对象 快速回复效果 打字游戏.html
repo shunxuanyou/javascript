@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+window.onkeydown=function(e){
+	alert("键盘按下事件");
+	
+	//键盘编码
+	var ev=window.event||e;
+	alert(ev.keyCode);
+	
+	//将键盘编码转换成它本身
+	var word=String.fromCharCode(ev.keyCode);
+	alert(word);
+	
+}
+
+</script>
+	
+
+<script>
+window.onkeydown=function(e){
+	//获得事件对象
+	var ev=window.event||e;
+	
+	if(ev.ctrlKey&&ev.keyCode==13){
+		alert("提交成功");
+	
+	}
+}
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

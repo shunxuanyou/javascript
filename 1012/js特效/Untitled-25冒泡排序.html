@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+    <script type="text/javascript">
+        //			冒泡排序
+        function mp(arr){
+            for(var j=0;j<arr.length-1;j++){
+                for(var i=0;i<arr.length-1;i++){
+//					将i号元素和i+1号元素进行对比,如果i号元素大于i+1号元素,就调换位置
+//						if(arr[i]<arr[i+1]){
+                    if(arr[i]>arr[i+1]){
+                        var temp=arr[i];
+                        arr[i]=arr[i+1];
+                        arr[i+1]=temp;
+                    }
+
+                }
+            }
+            return arr;
+        }
+        var shuzu=[25,36,2,96,5,80,36,36,96,51];
+        var re=mp(shuzu);
+        document.write(re);
+    </script><br/>
+
+    <script type="text/javascript">
+        //			sort排序
+        function sort(x,y){
+//			return x-y;
+            return y-x;
+        }
+        var shuzu=[25,36,2,96,5,80,36,36,96,51];
+        var re=shuzu.sort(sort);
+        document.write(re);
+    </script>
+
+</head>
+
+<body>
+</body>
+</html>

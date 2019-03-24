@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+var fruits=['苹果','鸭梨','水蜜桃','香蕉','仙桃','人参果'];
+document.write(fruits+"<br>")
+
+// 向数组末尾追加新元素
+fruits.push("射雕英雄传",'神雕侠侣','倚天屠龙记');
+document.write(fruits+"<br>");
+
+// 向元素开头添加数组
+fruits.unshift("刚毅木讷",'谦谦君子');
+document.write(fruits+"<br>");
+
+// 删除数组的最后一个元素
+fruits.pop();
+document.write(fruits+"<br>");
+
+// 删除第一个元素
+fruits.shift();
+document.write(fruits+"<br><hr>");
+
+// 万能添加和删除
+fruits.splice(2,3,"古龙","金庸");//从2号元素开始删除,删除3个,添加2个元素
+document.write(fruits+"<br>");
+
+fruits.splice(3,0,"<<小李飞刀>>");
+document.write(fruits+"<br><hr>");
+
+
+// slice不改变原数组,只返回新的结果,也支持负数
+var re=fruits.slice(2,4);//slice只包含开始,不包含结束
+document.write(re+"<br>");
+
+// 将数组转换成字符串,不改变原数组
+var arr=fruits.join('--');
+console.log(typeof arr);//string
+document.write(arr+"<br>");
+
+// 数组的连接
+var array=['-殇不患-','-凌雪鸦-'];
+var concat=fruits.concat(array);
+document.write(concat+"<br>");
+
+//数组内容复制的技巧
+var copy=fruits.concat(fruits);
+document.write(copy+"<br>");
+
+var fruit=['苹果','鸭梨','水蜜桃','香蕉','仙桃','人参果--'];
+var wuxia=['--比企谷八幡','雪之下雪乃','由比滨结衣','一色彩羽','静可爱','小婷'];
+document.write(fruit+wuxia);
+</script>
+
+</head>
+
+<body>
+</body>
+</html>

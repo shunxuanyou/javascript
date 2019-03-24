@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+    <script type="text/javascript">
+        //取绝对值
+        var re=Math.abs(-11);
+        console.log(re);
+
+        //四舍五入--四舍五入之后的结果一定是整数
+        var re=Math.round(5.59);
+        console.log(re);
+
+        //向上取整--如果是整数，那么结果还是它本身
+        var re=Math.ceil(2.1);
+        console.log(re);
+
+        // 向下取整
+        var re=Math.floor(4.9);
+        console.log(re);
+
+        //获得一个0-1的随机小数,取值范围无限接近0-1
+        var re=Math.random();
+        console.log(re);
+
+        //取10-15之间的随机小数
+        var re=Math.random()*(15-10)+10;
+        console.log(re);
+
+        //取随机整数
+        var re=Math.round(Math.random()*(90+1-20)+20);
+        console.log(re);
+
+        //取10-15之间的随机整数
+        var re=Math.floor(Math.random()*(15+1-10)+10);//精准一些
+        console.log(re);
+    </script>
+</head>
+
+<body>
+    <img src="images/sjs.png"/>
+</body>
+</html>

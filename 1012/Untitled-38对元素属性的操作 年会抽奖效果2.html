@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+*
+{
+	padding:0px;
+	margin:0px;
+}
+#tp
+{
+	margin:0 auto;
+	display:block;
+	width:650px;
+}
+#box
+{
+	width:500px;
+	height:100px;
+	margin:0 auto;
+}
+input
+{
+	width:100px;
+	height:50px;
+}
+</style>
+
+<script>
+window.onload=function(){
+	var ks=document.getElementById("ks");
+	var js=document.getElementById("js");
+	var tp=document.getElementById("tp");
+	var timer;
+	
+	//用来储存图片路径的数组
+	var tparr=["images/zmftl.jpg","images/btlls.jpg","images/02.jpg","images/05.jpg","images/08.jpg","images/11.jpg","images/13.jpg","images/08.jpg"];
+	//给开始按钮设置单击事件
+	ks.onclick=function(){
+
+		//解决定时器叠加的问题
+		clearInterval(timer);
+		
+	//设置定时器，每隔一秒钟就换一张图片
+	timer=setInterval(function(){
+	//抽取随机下标
+	var num=Math.floor(Math.random()*(tparr.length-1+1-0)+0);
+	//将num的路径设置给图片
+	tp.setAttribute("src",tparr[num]);
+
+		},100)
+		
+	}
+	//停止抽奖
+	js.onclick=function(){
+	//清理定时器
+	clearInterval(timer);
+	
+	
+	//生成一个随机数
+	var num=Math.random()*10;
+	if(num<9){
+		tp.setAttribute("src","images/bqgbf.jpg");
+	}
+
+	}
+
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+<input type="button" value="开始抽奖" id="ks"/>
+<input type="button" value="结束抽奖" id="js"/>
+</div>
+<img src="images/bqgbf.jpg" id="tp"/>
+</body>
+</html>

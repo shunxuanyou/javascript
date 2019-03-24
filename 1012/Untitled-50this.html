@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+*
+{
+	padding:0px;
+	margin:0px;
+}
+img
+{
+	float:left;
+	width:450px;
+	height:250px;
+	margin:10px;;
+}
+</style>
+
+<script>
+window.onload=function(){
+var imgs=document.getElementsByTagName("img");
+for(var i=0;i<imgs.length;i++){
+	//给t图片添加一个变量，用来记录序号
+		imgs[i].xuehao=i;
+	imgs[i].onclick=function(){
+		//this.style.display="none";
+		//this.style.visibility="hidden";
+		alert(this.xuehao);
+	}
+}
+}
+</script>
+</head>
+
+<body>
+<img src="images/02.jpg"/>
+<img src="images/05.jpg"/>
+<img src="images/07 .jpg"/>
+<img src="images/08.jpg"/>
+<img src="images/09.jpg"/>
+<img src="images/10.jpg"/>
+<img src="images/11.jpg"/>
+<img src="images/13.jpg"/>
+<img src="images/btlls.jpg"/> 
+</body>
+</html>

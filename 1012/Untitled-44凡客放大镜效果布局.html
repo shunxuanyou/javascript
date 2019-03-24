@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /*左侧图片的宽高*/
+    #left{
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+        background: url("images/001.jpg");
+        position: relative;
+        float: left;
+        cursor: crosshair;
+        margin-left: 70px;
+    }
+    /*左侧图片的色块*/
+    #left #box{
+        width: 220px;
+        height: 200px;
+        background: purple;
+        opacity: 0.3;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+
+    }
+    /*右侧图片的宽高*/
+    #right{
+        width: 440px;
+        height: 400px;
+        border: 1px solid black;
+        position: relative;
+        float: left;
+        margin: 30px;
+        overflow: hidden;
+        display: none;
+    }
+    #right #rpic{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #left #cover{
+        width: 400px;
+        height: 400px;
+        background: saddlebrown;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    #tp {
+        float: left;
+        margin: 20px 0 0 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    #tp img{
+        width: 68px;
+        height: 68px;
+        margin-top: 10px;
+    }
+    #tp img:hover{
+        border: 1px solid #a10000;
+    }
+</style>
+</head>
+
+<body>
+<div id="tp">
+    <img src="images/001.jpg" alt="">
+    <img src="images/002.jpg" alt="">
+    <img src="images/003.jpg" alt="">
+    <img src="images/004.jpg" alt="">
+    <img src="images/005.jpg" alt="">
+    <img src="images/006.jpg" alt="">
+</div>
+
+    <div id="left">
+        <div id="box"></div>
+        <div id="cover"></div>
+    </div>
+    <div id="right">
+        <img id="rpic" src="images/0011.jpg">
+    </div><br>
+
+
+
+
+    <!--<p><img src="images/放大镜.png" alt=""></p>-->
+
+</body>
+</html>
+<script>
+    // 获取所有的id
+    function $(id) {
+        return typeof id==='string'?document.getElementById(id):null;
+    }
+    var x=0;
+
+    // 给左侧图片添加鼠标移动事件
+    $("cover").onmousemove=function () {
+        // 获得事件对象
+        var ev=window.event||e;
+        // 获得鼠标移动的位置
+        var mouse_left=ev.offsetX||ev.layerX;
+        var mouse_top=ev.offsetY||ev.layerY;
+        document.title=mouse_left+' | '+mouse_top;
+        // 计算色块的位置
+        var box_left=mouse_left-110;
+        var box_top=mouse_top-100;
+        // 判断
+        if(box_left<0){
+            box_left=0;
+        }
+        if(box_left>180){//400-220
+            box_left=180;
+        }
+        if(box_top<0){
+            box_top=0;
+        }
+        if(box_top>200){//400-200
+            box_top=200;
+        }
+        // 设置色块移动的位置
+        $("box").style.left=box_left+"px";
+        $("box").style.top=box_top+"px";
+
+        // 计算右侧图片的位置
+       var rpic_left=box_left*-2;
+       var rpic_top=box_top*-2;
+       // 让右侧的图片移动
+       $("rpic").style.left=rpic_left+"px";
+       $("rpic").style.top=rpic_top+"px";
+
+    }
+
+    //	给左侧加鼠标移入事件
+    $("cover").onmouseover=function () {
+        // 让左侧色块和右侧div显示
+        $("box").style.display="block";
+        $("right").style.display="block";
+    }
+    //	给左侧加鼠标移出事件
+    $("cover").onmouseout=function () {
+        $("box").style.display="none";
+        $("right").style.display="none";
+    }
+
+
+   var tp=document.getElementById("tp").getElementsByTagName("img");
+   for(var i=0;i<tp.length;i++){
+       tp[i].xuhao=i+1;
+       tp[i].onmouseover=function () {
+           $("left").style.backgroundImage='url("images/00'+this.xuhao+'.jpg")';
+           $("rpic").setAttribute("src",`images/00${this.xuhao}${this.xuhao}.jpg`);
+           // tp[this.xuhao-1].classList.add('action');
+           // var x=this.xuhao;
+           // tp[x-0].classList.remove('action');
+       }
+
+   }
+
+
+</script>

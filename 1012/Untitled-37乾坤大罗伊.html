@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+            height: 260px;
+            border: 4px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="hd1">
+        台版转自澄空学园二次元轻小说社
+
+        图源：姐控眠
+
+        美工：姐控眠
+
+        录入：xinkj007
+
+        校对：ことみちゃん；xinkj007；sstd1h；chen8chen6
+
+        2年F班比企谷八幡
+
+        青春是一场谎言、一种罪恶。
+
+        歌颂青春者往往欺骗自己与周遭的人。正面看待自身所处环境之一切。
+
+        就算犯下什么滔天大错，他们也视之为青春的象征，刻划为记忆中的一页。
+    </div>
+    <p><input type="button" value="乾坤大罗伊" id="btn"></p>
+    <div id="hd2"></div>
+</body>
+</html>
+<script>
+    window.onload=function () {
+        // querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。
+        var hd1=document.querySelector("#hd1");
+        var hd2=document.querySelector("#hd2");
+        var btn=document.querySelector("#btn");
+        var x=1;
+        btn.onclick=function () {
+            if(x==1){
+                // 获得hd1的内容
+                var con=hd1.innerHTML;
+                // 将con的值写入hd2中
+                hd2.innerHTML=con;
+                // 将hd1清空
+                hd1.innerHTML=null;
+                x=2;
+            }else if(x==2){
+                // 获得hd2的内容
+                var con=hd2.innerHTML;
+                // 将con的值写入hd1中
+                hd1.innerHTML=con;
+                // 将hd1清空
+                hd2.innerHTML=null;
+                x=1;
+            }
+
+        }
+    
+    }
+</script>

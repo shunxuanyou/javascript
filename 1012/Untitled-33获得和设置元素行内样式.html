@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript">
+    window.onload=function() {
+        // 抓取元素
+        var btn=document.getElementById("btn");
+        var hd=document.getElementById("hd");
+        // 给按钮添加单击事件
+        btn.onclick=function(){
+            // 获得元素当前的宽度
+            var old_width=hd.style.width;
+            // 计算新的宽度
+            var new_width=parseInt(old_width)+10;
+            // 将新的宽度赋值回去
+            hd.style.width=new_width+"px";
+
+        }
+    }
+</script>
+</head>
+
+<body>
+<p><input type="button" value="获得行内样式" id="btn"/></p>
+<div id="hd" style="width: 300px;height: 300px;background-color: violet;margin: 0 auto;"></div>
+</body>
+</html>

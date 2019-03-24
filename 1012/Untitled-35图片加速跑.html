@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>无标题文档</title>
+    <style type="text/css">
+        #tp
+        {
+            position:absolute;
+            top:50px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var dj=document.getElementById("dj");
+            var tp=document.getElementById("tp");
+            var speed=10;
+            var dsq;//先声明dsq变量，以防止第一次点击的时候报错
+
+            //给按钮添加单机事件
+            dj.onclick=function(){
+
+                //图片加速跑
+                // speed++;
+                // speed=speed*2;
+
+//	  	解决定时器叠加的思路:在设置定时器(必须是全局变量)之前,先清理定时器
+                clearInterval(dsq);
+
+                //设置定时器，每隔一秒钟就变化一次left
+                dsq=setInterval(function(){
+                    //获得旧的left
+                    var old_left=tp.style.left;
+                    //计算新的lrft
+                    var new_left=parseInt(old_left)+speed;
+                    //赋值回去
+                    tp.style.left=new_left+"px";
+                    //判断边界
+                    if(new_left==1200||new_left==0){
+                        speed=speed*-1;
+                    }
+
+                    // 输出的调试方法
+                    document.title=new_left;
+                    console.log(new_left);
+
+                },10)
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="运动原理" id="dj" />
+<img src="images/huli.gif" id="tp" style="left:0px" />
+</body>
+</html>

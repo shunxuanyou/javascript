@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+  var dj=document.getElementById("dj");
+  var tp=document.getElementById("tp");
+  var p=1;
+  var s=1;
+   
+   //给按钮添加单击事件
+   dj.onclick=function(){
+   //设置定时器，每隔500毫秒换一张图片
+	setInterval(function(){
+		
+		//p++;
+		
+		// p=p+s;
+		
+		//规定图片的范围
+		//if(p==5){
+		//	p=1;
+		//}
+		//p=(p==5)?1:p;
+		
+		// if(p==5){
+		// 	s=-1;
+		// }
+		// if(p==1){
+		// 	s=1;
+		//
+		// }
+		
+		//换一张图片
+		tp.setAttribute("src","images/xz"+p+".jpg")
+		
+		
+	},500)
+	   
+	   
+   }
+	
+	
+}
+
+
+</script>
+</head>
+
+<body>
+<input type="button" value="动漫" id="dj"/><br/>
+<img src="images/xz1.jpg" id="tp"/><br/>
+</body>
+</html>

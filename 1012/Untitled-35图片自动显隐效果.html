@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+   var hd=document.getElementById("hd");
+   var hs=document.getElementById("hs");
+   var sta=1;
+   //给按钮添加单击事件
+    hd.onclick=function(){
+	   if(sta==1){//处于显示状态
+		   hs.style.display="none";
+		   sta=2;
+	   }else if(sta==2){//处于隐藏状态
+		 hs.style.display="block";
+		 sta=1;
+	   }
+   }
+}
+</script>
+</head>
+
+<body>
+    <input type="button"  value="点击隐藏!" id="hd"/><br/>
+    <img src="images/360截图20171020180649313.jpg" id="hs"/>
+</body>
+</html>
