@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<!--4调用指令-->
+<hello-world>倚天屠龙记</hello-world>
+
+
+</body>
+</html>
+<script>
+    // 1创建模块
+    var app=angular.module("app",[]);
+    // 2创建指令
+    app.directive("helloWorld",()=>{
+        return {//返回的是一个对象
+            // 3template:设置模板内容(设置模板的HTML)
+            // template:"<h1>hello angular.js</h1>",
+            // template:"<ul><li>倚天剑</li><ng-transclude></ng-transclude><li>屠龙刀</li></ul>",
+            templateUrl:"url/url.html",
+            // 调用方式
+            restore:"ECAM",
+            // 替换指令所在的标签
+            replace:true,
+            // 替换填充内容
+            transclude:true,
+        }
+    });
+</script>
