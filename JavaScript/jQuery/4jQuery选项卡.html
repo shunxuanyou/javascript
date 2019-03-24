@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝公告栏切换效果</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+            font-family: 宋体;
+            font-size:14px;
+            color:#666;
+        }
+        ul{
+            list-style: none;
+        }
+        .container{
+            width:300px;
+            margin:0 auto;
+        }
+        .title{
+            height:32px;
+        }
+        .title h4{
+            float:left;
+            width:60px;
+            text-align: center;
+            height:30px;
+            line-height: 30px;
+            font-weight: normal;
+        }
+        .title h4:hover{
+            cursor: pointer;
+        }
+        .title h4.current{
+            border-bottom: 2px #ff5000 solid;
+            cursor: pointer;
+        }
+        /*.title h4:hover{*/
+            /*color: red;*/
+            /*font-weight: 700;*/
+            /*border-bottom: 2px solid red;*/
+            /*box-sizing: border-box;*/
+        /*}*/
+        .list{
+            width:300px;
+            float:left;
+            display:none;
+        }
+        .list li{
+            float:left;
+            height:25px;
+            line-height: 25px;
+            max-width: 300px;
+            overflow: hidden;
+            margin-right:10px;
+        }
+        .list li a{
+            text-decoration: none;
+            color:#666;
+        }
+        .list li.hot a{
+            color:#ff5000;
+        }
+
+
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h4 class="current">公告</h4>
+        <h4>规则</h4>
+        <h4>论坛</h4>
+        <h4>安全</h4>
+        <h4>公益</h4>
+    </div>
+    <ul class="list" style="display:block;">
+        <li class="hot"><a href="#">非洲青年的阿里"大学":数字经济浪潮从杭州开始</a></li>
+        <li><a href="#">双11让一线城市大洗牌</a></li>
+        <li><a href="#">天猫手机居行业首位</a></li>
+    </ul>
+    <ul class="list">
+        <li class="hot"><a href="#">淘宝头条规范变更</a></li>
+        <li><a href="#">新增住宅家具行业标准</a></li>
+        <li><a href="#">游戏软件类目准入公告</a></li>
+        <li class="hot"><a href="#">天天特价规则变更</a></li>
+    </ul>
+    <ul class="list">
+        <li><a href="#">非洲青年的阿里"大学":数字经济浪潮从杭州开始</a></li>
+        <li><a href="#">双11让一线城市大洗牌</a></li>
+        <li><a href="#">天猫手机居行业首位</a></li>
+    </ul>
+    <ul class="list">
+        <li><a href="#">淘宝头条规范变更</a></li>
+        <li><a href="#">新增住宅家具行业标准</a></li>
+        <li><a href="#">游戏软件类目准入公告</a></li>
+        <li><a href="#">天天特价规则变更</a></li>
+    </ul>
+    <ul class="list">
+        <li><a href="#">天天特价规则变更</a></li>
+        <li><a href="#">新增住宅家具行业标准</a></li>
+        <li><a href="#">游戏软件类目准入公告</a></li>
+        <li><a href="#">淘宝头条规范变更</a></li>
+    </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    // //获取选项卡
+    // var tabs = document.getElementsByClassName('title')[0].getElementsByTagName('h4');
+    // //获取选项卡内容
+    // var lists = document.getElementsByClassName('list');
+    // //定义默认显示的选项卡内容索引
+    // var x = 0;
+    // for(var i = 0; i < tabs.length; i++){
+    //     tabs[i].m = i;
+    //     tabs[i].onmouseover = function(){
+    //         //先隐藏
+    //         tabs[x].className = '';  //去掉current样式
+    //         lists[x].style.display = 'none';
+    //         //再显示
+    //         tabs[this.m].className = 'current';
+    //         lists[this.m].style.display = 'block';
+    //         //把当前显示的索引作为下一次隐藏的索引
+    //         x = this.m;
+    //     }
+    // }
+    //定义默认显示的选项卡内容索引
+    var x=0;
+    $(".title>h4").click(function(){
+        // 隐藏上一次的边框
+        $(".title>h4").eq(x).css({"border-bottom":"none"});
+        // 显示当前的下边框
+        $(".title>h4").eq($(this).index()).css({"border-bottom":"2px solid red"}).show();
+
+
+       // 先隐藏
+       $(".list").eq(x).hide();
+       // 再显示
+       $(".list").eq($(this).index()).show();
+       // 把当前显示的索引作为下一次的隐藏索引
+       x=$(this).index();
+    })
+</script>

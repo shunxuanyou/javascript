@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝左侧菜单栏效果</title>
+    <style type="text/css">
+        *{padding:0;margin:0;}
+        body{
+            font-family: 宋体;
+            color:#666;
+        }
+        ul{list-style: none}
+        .cats{
+            border:1px #ff5000 solid;
+            width:200px;
+            float:left;
+        }
+        .cats li{
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .cats li:hover{
+            cursor: pointer;
+            background: lightpink;
+            color:#ff5000;
+        }
+        .cats li span{
+            float:right;
+            margin-right:20px;
+        }
+        .child{
+            float:left;
+            border:2px #ff5000 solid;
+            padding:0 20px 20px 20px;
+            display:none;
+        }
+        .child li{
+
+        }
+        .child li h3{
+            height:40px;
+            line-height: 40px;
+        }
+        .child li a{
+            color:#666;
+            text-decoration: none;
+        }
+        .child li div{
+            height:23px;
+            line-height: 23px;
+        }
+        .child li div a{
+            font-size:14px;
+            margin-right:10px;
+        }
+        .child li a.hot{
+            color:#ff5000;
+        }
+        #catTree{
+            float:left;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<div id="catTree" onmouseleave="hideChild();">
+    <!--一级分类-->
+    <ul class="cats">
+        <li>女装/男装/内衣<span>></span></li>
+        <li>鞋靴/箱包/配件<span>></span></li>
+        <li>童装玩具/孕产<span>></span></li>
+        <li>家电/数码/手机<span>></span></li>
+        <li>珠宝/眼镜/手表<span>></span></li>
+        <li>运动/户外/乐器<span>></span></li>
+        <li>运动/户外/乐器<span>></span></li>
+    </ul>
+    <!--二级分类-->
+    <ul class="child">
+        <li>
+            <h3><a href="#">女装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+    <ul class="child">
+        <li>
+            <h3><a href="#">鞋靴</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+    <ul class="child">
+        <li>
+            <h3><a href="#">童装玩具</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+    <ul class="child">
+        <li>
+            <h3><a href="#">家电</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+    <ul class="child">
+        <li>
+            <h3><a href="#">珠宝</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+    <ul class="child">
+        <li>
+            <h3><a href="#">运动一</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+    <ul class="child">
+        <li>
+            <h3><a href="#">运动二</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">男装</a></h3>
+            <div>
+                <a href="#">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+        <li>
+            <h3><a href="#">内衣</a></h3>
+            <div>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#" class="hot">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#">羽绒服</a>
+                <a href="#" class="hot">毛呢外套</a>
+                <a href="#">毛衣</a>
+                <a href="#">针织衫</a>
+                <a href="#" class="hot">羽绒服</a>
+                <a href="#">毛呢外套</a>
+                <a href="#">毛衣</a>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    // //获取一级菜单
+    // var cats = document.getElementsByClassName('cats')[0];
+    // var parents = cats.getElementsByTagName('li');
+    // //获取所有的二级菜单
+    // var child = document.getElementsByClassName('child');
+    //
+    // //上一次显示的子菜单索引
+    // var x = 0;
+    //
+    // //循环所有的一级菜单
+    // for(var i = 0; i < parents.length; i++){
+    //
+    //     //将一级菜单索引作为index属性
+    //     parents[i].index = i;
+    //
+    //     //给一级菜单绑定mouseover事件
+    //     parents[i].onmouseover = function(){
+    //         //将上一次显示的子菜单隐藏
+    //         child[x].style.display = 'none';
+    //         //将当前选中的子菜单显示
+    //         console.log(this.index); //this:parents[i]
+    //         child[this.index].style.display = 'block';
+    //         //将当前显示的索引作为下一次隐藏的索引
+    //         x = this.index;
+    //
+    //     }
+    // }
+    // //隐藏子菜单
+    // function hideChild(){
+    //     //将所有的child都隐藏
+    //     for(var i = 0; i < child.length;i++){
+    //         child[i].style.display = 'none';
+    //     }
+    // }
+    // 默认隐藏的二级菜单索引
+    var x=0;
+
+    // 给所有的一级菜单添加鼠标移入事件
+    $(".cats:eq(0)>li").mouseover(function(){
+
+        // 将所有的二级菜单隐藏
+        $(".child").eq(x).hide();
+        // 将当前的二级菜单显示
+        $(".child").eq($(this).index()).show();
+        // 将当前显示的索引作为下一次要隐藏的索引
+        x=$(this).index();
+    })
+    // 鼠标移开时，隐藏所有的二级菜单
+    $("#catTree").mouseleave(function(){
+        $(".child").eq(x).hide();
+    })
+</script>

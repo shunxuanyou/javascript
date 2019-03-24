@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 800px;
+            border: 1px solid black;
+            margin: 100px auto;
+            padding: 20px;
+        }
+        #box-top textarea{
+            width: 80%;
+            height: 120px;
+        }
+        #box-button{
+            margin: 0px 80px;
+        }
+        #box-button li{
+            border-bottom: 1px dashed #ccc;
+            color: red;
+            line-height: 40px;
+            list-style: none;
+        }
+        #box-button li a{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box-top">
+            <label>发表评论:</label>
+            <textarea rows="10" cols="30" id="txt"></textarea>
+            <button id="btn">发表</button>
+        </div>
+        <ul id="box-button">
+            <li>喂喂,独孤求败
+                <a href="#">删除</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    function $(id) {
+        return typeof id==="string"?document.getElementById(id):null;
+    }
+    // 监听按钮的点击
+    $("btn").onclick=function () {
+        // 获取用户输入的内容
+        var content=$("txt").value;
+        console.log(content);
+        // 判断
+        if(content===''){
+            return alert("请输入内容~");
+        }
+
+        // 创建元素节点
+        var li=document.createElement('li');
+        // 创建文本节点
+        li.innerHTML=content+'<a href="javascript:;">删除</a>';
+        // 添加元素节点
+        // $("box-button").appendChild(li);
+        $("box-button").insertBefore(li,$("box-button").children[0]);
+
+        // 清除输入框中的内容
+        $("txt").value='';
+
+        // 删除评论
+        var as=$("box-button").getElementsByTagName("a");
+        console.log(as);
+        for(var i=0;i<as.length;i++){
+            as[i].onclick=function () {
+               // 获取父元素,删除
+                this.parentNode.remove();
+            }
+        }
+    }
+</script>

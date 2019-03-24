@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 构造函数
+    function person(name,age) {
+        this.name=name;
+        this.age=age;
+        this.sex="男";
+        this.eat=function () {
+            console.log("这是方法……");
+        }
+
+    }
+    // 实例化对象
+    var person1=new person("独孤求败",40);
+    console.log(person1.name);
+    var person2=new person("独孤九剑",40);
+    console.log(person2.name);
+
+    person2.eat();
+
+    console.log(person1.constructor==person);
+    console.log(person2.constructor==person); // 代码少了，person1和person2有关联
+
+    console.log(person1.eat==person2.eat);//false,公用不变的属性或方法重复,即两个对象的方法创建了两次
+
+</script>

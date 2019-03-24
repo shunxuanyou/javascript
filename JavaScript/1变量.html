@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 强制类型转换
+       var num=Number("hello");
+       console.log(typeof num);
+
+       var obj={};
+       console.log(typeof obj);//对象
+
+       var a;
+       console.log(a);//undefined
+
+       var b=null;
+       console.log(b);//boject
+
+        var c=NaN;
+        console.log(typeof c);//number
+
+        // 三元运算符
+        var num=10%3>2?1:0;
+        console.log(num);
+
+
+
+        // 函数的定义
+        function  getNum() {
+            var num1=1;
+            var num2=2;
+            console.log(num1+num2);
+        }
+        // 函数的调用
+        getNum();
+        getNum();
+
+        // 带有参数的函数定义
+        function hanshu(n1,n2) {//形参
+            var num1=n1;
+            var num2=n2;
+            console.log(num1+num2)
+        }
+        // 调用带有参数的函数
+        hanshu(3,3);//实参
+
+
+        // 变量的作用域
+        var a="ok";
+        function f4() {
+            a="no";
+            // console.log(a);
+        }
+
+        function f5(a) {//局部变量
+            a="no";
+            // 函数之内能直接调用全局变量
+            console.log(a);
+        }
+        f5(a);
+        //函数之外不能直接调用局部变量
+        console.log(a);//全局变量
+
+
+        // 函数的返回值
+        var m=0;
+        function  f6(m) {
+            m=m+1;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

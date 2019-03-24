@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 使用创建对象的形式声明数组
+        var arr=new Array(1,2,3);
+        // console.log(arr);
+        // 数组的遍历
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+
+        // 直接赋值来声明数组
+        var arr2=["a","b","c",1];
+        // 数组的遍历
+        for(var x in arr2){
+            console.log(arr2[x]);
+        }
+
+        // 冒泡排序
+        var arr=[100,65,85,55,41,33,1];
+     for(var j=0;j<arr.length;j++){
+        for(var i=0;i<arr.length-1;i++){
+            // 第一个值arr[i]，第二个值arr[i+1]
+            if(arr[i]>arr[i+1]){
+                var temp=arr[i];//temp=100
+                arr[i]=arr[i+1];//arr[0]=65 第一个值
+                arr[i+1]=temp;  //第二个值
+            }
+         }
+      }
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

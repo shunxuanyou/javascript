@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+用户名：<input type="text" name="names">  <br/>
+密码: <input type="password" name="pass"> <br/>
+是否保存：<input type="checkbox" name="box">
+</body>
+</html>
+
+<script>
+    // 账号密码的保存
+    window.onload = function()  {
+        // 获取用户名、密码、是否保存
+        names  = document.getElementsByName("names")[0],
+        pass = document.getElementsByName("pass")[0],
+        box = document.getElementsByName("box")[0];
+        // 三元表达式，以上的value值等于储存的值吗？等于的话就想等：否则则为空
+        names.value =  localStorage.getItem("names")?localStorage.getItem("names"):"";
+        pass.value  = localStorage.getItem("pass")?localStorage.getItem("pass"):"";
+        // 将checkbox和用户名、密码关联上
+        box.checked = names.value&&pass.value;
+        // 给CheckBox添加单击事件
+        box.onclick  = function() {
+            // 选择CheckBox的话就储存用户名和密码，否则就删除
+            if (box.checked) {
+                localStorage.setItem("names", names.value);
+                localStorage.setItem("pass", pass.value);
+                // box.checked = false;
+                console.log(names.value);
+                console.log(pass.value);
+            } else {
+                localStorage.removeItem("names");
+                localStorage.removeItem("pass");
+            }
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>第一个节点</li>
+    <li>第二个节点</li>
+</ul>
+<input type="text" id="text"><input type="button" value="修改" onclick="create()">
+</body>
+</html>
+<script>
+    function create() {
+       // var ul=document.getElementsByTagName("ul")[0].innerHTML='<a href="">链接</a>';
+       // 创建元素节点
+        var newLl=document.createElement("li");
+        // 获取文本节点的内容
+        var str=document.getElementById('text').value;
+        console.log(str);
+        // 判断
+        if(str===''){
+            return alert("请输入内容~");
+        }
+        // 创建文本节点
+        var txt=document.createTextNode(str);
+        //将文本节点添加到元素节点
+        newLl.appendChild(txt);
+        console.log(newLl);
+
+
+        // 获取父节点
+        // var parset=document.getElementsByTagName('ul')[0];
+        // 获取要替换的旧节点
+        // var oldLi=parset.children;
+
+        // 获取子节点
+        var oldLi=document.getElementsByTagName('li');
+        // 通过li,获取父元素
+        var parset=oldLi[0].parentNode;
+        // 替换子节点
+        parset.replaceChild(newLl,oldLi[0]);
+        // 清除输入框的内容
+        document.getElementById("text").value='';
+
+    }
+</script>

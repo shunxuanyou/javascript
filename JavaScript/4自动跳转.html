@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var miao=document.getElementsByTagName("span")[0];
+            var i=3;//设定的秒数
+            setInterval(function(){
+                i--;//秒数递减
+               miao.innerHTML=i;
+               if(i==0){//判断是否到0秒
+                   //跳转页面
+                   window.location.href="https://www.baidu.com/?tn=97150107_hao_pg";
+               }
+            },1000)
+        }
+    </script>
+</head>
+<body>
+    <div>登陆成功，<span>3</span>秒之后跳回首页</div>
+</body>
+</html>

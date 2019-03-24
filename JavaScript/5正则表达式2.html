@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // var str='2244';
+    // // 第二个数是2，第四个数是4，不少于4位数
+    // var reg=/^\d2\d4\d*$/;
+    // var res=reg.exec(str);
+    // document.write(res);
+
+    //{}中的数字表示位数
+    // []中的数字则表示任意的一个数字
+    //()表示子模式,也是一个正则表达式，包含在一个大正则式中，是一个整体
+
+    // var str='13886132244';
+    // // 开头为1，345789的任意一个，距离手机号的11位还差9位
+    // var reg=/^\d{1}[345789]\d{9}$/;
+    // var res=reg.exec(str);
+    // document.write(res);
+
+    // var str='www.sina.com';
+    // var reg=/^w{3}.[a-zA-Z\d\u4e00-\u9fa5]+.(com|cn|net)$/;
+    // var res=reg.exec(str);
+    // document.write(res);
+
+    // var str='abcdabcd';
+    // // \w表示匹配普通字符（数字、字母、下划线）的任意一个字符
+    // // \W表示匹配非数字、字母、下划线的任意一个字符
+    // var reg=/(\w+)(\w+)\1/;//\1表示第一个子模式的值
+    // var res=reg.exec(str);
+    // document.write(res);
+
+    // 邮箱
+    var str='teaching.code@lanpu3g.com.cn';
+    var reg=/^[\w\-\.]+@[\w\-]+\.(com|net|cn|com\.cn)$/;
+    var res=reg.exec(str);
+    document.write(res);
+</script>

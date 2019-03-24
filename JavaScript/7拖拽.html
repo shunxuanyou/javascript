@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 800px;
+            height: 800px;
+            border: 1px solid red;
+            background-color: white;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #2E82FF;
+            /*通过left与top即可移动*/
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div></div>
+</div>
+</body>
+</html>
+<script>
+    var box=document.getElementsByTagName("box");
+    var divs=document.getElementsByTagName("div");
+    /*1.鼠标按下时，获取鼠标所在位置以及div原始所在位置；
+      2.在移动鼠标的过程中，及时获取鼠标所在位置
+      3.通过1和2得到移动前后移动后的距离
+      4.改变div的原始位置
+    */
+    // 绑定鼠标按下事件
+    divs[1].addEventListener("mousedown",function (event) {
+        //获取event对象
+        event=event||window.event;
+        //获取div的原始位置
+        var divX=this.offsetLeft;
+        var divY=this.offsetTop;
+        console.log(divX);
+        var boxX=this.offsetX;
+        var boxY=this.offsetY;
+        //获取鼠标的原始位置
+        var mouseX=event.clientX;
+        var mouseY=event.clientY;
+        var _this=this;
+
+        // 鼠标移动
+       document.onmousemove=function (event2) {
+            //获取event对象
+            var event2=event2||window.event;
+            //及时获取鼠标所在位置
+            var moveX=event2.clientX;
+            var moveY=event2.clientY;
+            // 得到鼠标两次位置的距离差
+            var x=moveX-mouseX;
+            var y=moveY-mouseY;
+            //改变div位置
+            _this.style.left=divX+x+"px";
+            _this.style.top=divY+y+"px";
+
+       }
+        //鼠标松开时，停止拖拽
+        divs[1].addEventListener("mouseup",function () {
+            // 停止移动
+            document.onmousemove=null;
+        })
+    })
+</script>

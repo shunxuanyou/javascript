@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记住我</title>
+    <script>
+        window.onload=function () {
+            console.log(window.localStorage);
+            if(localStorage.getItem("uname")){
+                document.getElementsByTagName("body")[0].innerHTML=localStorage.getItem("uname")+",欢迎你！<a href=''>退出登录</a>";
+              // 退出登录
+              document.getElementsByTagName("a").onclick=function () {
+                  localStorage.removerItem("uname");
+                  document.getElementsByTagName("a")[0].innerHTML='<form action="">\n' +
+                      '    用户名：<input type="text" name="uname"><br>\n' +
+                      '    密码：<input type="password" name="pwd"><br>\n' +
+                      '    记住我：<input type="checkbox" name="rem" value="1"><br>\n' +
+                      '    <input type="submit" value="登录">\n' +
+                      '</form>';
+              }
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="">
+    用户名：<input type="text" name="uname"><br>
+    密码：<input type="password" name="pwd"><br>
+    记住我：<input type="checkbox" name="rem" value="1"><br>
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>
+<script>
+    document.getElementsByTagName("form")[0].onsubmit=function () {
+        // 记住我checkbox
+        var rem=this.rem;
+        // 是否选择记住我
+        if(rem.checkbox){
+            // 记住我
+            localStorage.setItem("uname",this.uname.value);
+          document.getElementsByTagName("body")[0].innerHTML=localStorage.getItem("uname")+",欢迎你！<a href=''>退出登录</a>";
+        }
+        return false;
+    }
+</script>

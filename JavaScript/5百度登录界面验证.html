@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <title>Title</title>
+    <style>
+        form{
+            width: 360px;
+            height: 408px;
+            /*background-color: #33b5e5;*/
+        }
+        input[type="text"]{
+            width: 303px;
+            height: 43px;
+
+        }
+        input[type="password"]{
+            width: 303px;
+            height: 43px;
+        }
+        input[type="submit"]{
+            width: 308px;
+            height: 48px;
+            background-color: dodgerblue;
+            color: white;
+            font-size: 16px;
+        }
+        a:nth-of-type(2){
+            margin-left: 100px;
+        }
+        a:nth-of-type(5){
+            margin-left: 110px;
+        }
+        a{
+            text-decoration: none;
+        }
+        p:nth-of-type(1){
+            display: inline-block;
+        }
+        img:nth-of-type(3){
+            position: relative;
+            top: 6px;
+            left: 0px;
+        }
+        img:nth-of-type(4){
+            position: relative;
+            top: 6px;
+            left: 0px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body>
+<form action="" method="post" onsubmit="return yanzheng()" name="form01">
+
+    <img src="https://passport.baidu.com/passApi/img/loginlogo.png" alt="">
+    <p>用户名密码登录</p>
+    <p><input type="text" placeholder="手机/邮箱/用户名" name="uname"></p>
+    <p><input type="password" placeholder="密码"></p>
+    <p><input type="checkbox">下次自动登录</p>
+    <p><input type="submit" value="登录"></p>
+    <a href="">忘记密码？</a>
+    <a href="">短信快捷登录</a><br/><br/><br/><br/>
+    <a href="">扫码登录</a>
+    |
+    <a href="" class="iconfont icon-qq" style="color: #2E82FF"></a>
+    <a href="" class="iconfont icon-icon-weibo" ></a>
+    <a href="">立即注册</a>
+
+</form>
+</body>
+</html>
+<script>
+    function yanzheng(){
+        // uname:form01.uname.value
+        var regPhone=/^1[35789]\d{9}$/;
+        var regEmail=/^[\w\-\.]+@[\w\-]+\.(com|net|cn|com\.cn)$/;
+        var regUname=/^\w{6,16}$/;
+        if(!regPhone.exec(form01.uname.value)&&!regEmail.exec(form01.uname.value)&&!regUname.exec(form01.uname.value)){
+            alert("用户名不合法！");
+            return false;//阻止表单提交
+        }
+    }
+</script>

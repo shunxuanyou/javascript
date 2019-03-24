@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/form.js"></script>
+</head>
+<body>
+    <form action="">
+        用户名：<input type="text" name="uname"><span></span><br>
+        密码：<input type="password" name="pwd"><br>
+        邮箱：<input type="text" name="email"><br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>
+<script>
+    document.getElementsByTagName("form")[0].onsubmit=function () {
+        return Reg("name","pwd");
+    };
+    var uname=document.getElementsByName("uname")[0];
+
+</script>

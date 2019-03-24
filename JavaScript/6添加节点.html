@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .myClass{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>第一个节点</li>
+        <li>第二个节点</li>
+    </ul>
+    <input type="text" id="text"><input type="button" value="添加" onclick="create()">
+</body>
+</html>
+<script>
+    function create() {
+        // 创建元素节点
+        var li=document.createElement("li");
+        // 获取输入的文本节点内容
+        var str=document.getElementById("text").value;
+        // 判断
+        if(str===''){
+            return alert("请输入内容~");
+        }
+        // console.log(str);
+        // 创建文本节点
+        var text=document.createTextNode(str);
+        // 将文本节点添加到元素节点中
+        li.appendChild(text);
+
+            // 创建属性节点
+            // li.id="myId";
+            var attr=document.createAttribute("class");
+            // 给属性节点设置值
+            attr.value="myClass";
+            // 将属性节点添加到元素节点中
+            li.setAttributeNode(attr);
+            // console.log(li);
+
+        // 将li添加到ul中 --添加到最后
+        // document.getElementsByTagName("ul")[0].appendChild(li);
+
+        // 将li添加到ul中 --添加到最前 获取父元素ul
+        var ul=document.getElementsByTagName('ul')[0];
+        // 获取ul下所有的元素节点
+        // var lis=ul.getElementsByTagName("li");
+        var lis=ul.children;
+        ul.insertBefore(li,lis[0]);
+
+        // //获取父元素ul
+        // var ul = document.getElementsByTagName('ul')[0];
+        // // 添加到第一个子节点 ----添加到最前
+        // ul.insertBefore(li,ul.firstChild);
+        // ul.insertBefore(li,ul.firstElementChild);
+
+        // 清除输入框的内容
+        document.getElementById("text").value='';
+
+
+        //获取父元素ul
+       //  var ul = document.getElementsByTagName('ul')[0];
+       //  // 等价于获取ul下的所有子节点
+       //  var lis=ul.childNodes;//包含空格和换行的节点，不准确
+       //  console.log(lis);
+       //  for(var i=0;i<lis.length;i++){
+       //      //获取节点类型
+       //      console.log(lis[i].nodeType);
+       //      if(lis[i].nodeType==1){//元素节点
+       //          ul.insertBefore(li,lis[i]);
+       //          break;
+       //      }
+       //  }
+       // console.log(lis);
+
+    }
+</script>

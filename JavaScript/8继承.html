@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 父类
+    function person(name,age) {
+        this.name=name;
+        this.age=age;
+        this.eat=function () {
+            console.log("吃吃吃吃……");
+        }
+    }
+    // 公用不变的属性或方法
+    person.prototype.sleep=function () {
+        console.log("公用不变的属性或方法……");
+    }
+    chinese.prototype=new person("喂喂",40);
+    chinese.prototype.constructor=chinese;
+
+
+    // 子类
+    function chinese() {
+       // 调用父类
+       person.call(this,"独孤求败",20);
+       // person.apply(this,["问问",10]);
+        this.run=function () {
+            console.log("嚯嚯……");
+        }
+    }
+    // 实例化子类
+    var chinese1=new chinese();
+    console.log(chinese1.name);
+    chinese1.eat();
+    chinese1.run();
+
+    chinese1.sleep();//报错，调用不了--公用不变的属性或方法
+</script>

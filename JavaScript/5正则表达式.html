@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 验证一个字符串是否存在“test”
+    // var str="this is a test";
+    // // ‘/’之间为正则表达式，不使用引号
+    // var reg=/test/;
+    // // exec()：正则匹配，返回第一个匹配的内容；如何匹配不到，则返回null
+    // var res=reg.exec(reg);
+    // console.log(res);
+
+
+    // var str="acccccbccccccc";
+    // var reg=/bc{2}/;//{m}:匹配m个
+    // var reg=/bc{2,}/;//{m,}：匹配m个或m个以上
+    // var reg=/bc{2,4}/;// {m,n}:匹配m个到n个,
+    // var res=reg.exec(str);
+    // document.write(res);
+
+
+
+    var str='563333455667';
+    // var reg=/[0123456789]/;//0123456789、0-9、\d:表示匹配任意一个字符
+    // var reg=/[0-9]/;
+    // var reg=/\d/;
+    // var reg=/[a-zA-z=Z]/;//a-zA-z=Z表示英文字母
+
+
+    //var reg=/\d{1,}/; //等价{m,}：匹配m个或m个以上
+    //var reg=/\d+/;    //等价{m,}：匹配m个或m个以上
+    var reg=/^\d+$/;//^：开头 $结尾  只显示字符串中所有的数字，一有其他的则不予显示
+
+    var res=reg.exec(str);
+    document.write(res);
+    // document.write(str.replace(/a563333455667/,'563333455667'));
+
+
+
+</script>

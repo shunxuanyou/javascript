@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 实现在函数外访问函数内部的值
+   function getMsg() {
+       var msgs="闭包";//局部变量
+
+       // 第一种写法
+       return function msg() {
+           return msgs;
+       }
+
+       // 第二种写法
+       // return (function(){
+       //     return msgs;
+       //  })();//自执行函数
+   }
+   console.log(getMsg()());
+  // console.log(getMsg());
+
+</script>

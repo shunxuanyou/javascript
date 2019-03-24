@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // cookie的存储
+    document.cookie="username=yss";
+    document.cookie="email=yss@lanou.com;max-age=20";
+    // cookie的读取
+    console.log(document.cookie);//读取所有cookie
+
+    // 将cookie分割成数组
+    var con=document.cookie.split("; ")
+    for(var i=0;i<con.length;i++){
+        var log=con[i].split("=")
+        console.log("cookit名为："+log[0]+";值为:"+log[1]);
+    }
+    // 销毁
+    document.cookie="username=null;max-age=0";
+    console.log("销毁了前一个："+document.cookie);
+
+</script>

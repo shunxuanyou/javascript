@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据缓存</title>
+</head>
+<body>
+标题：<input type="text" name="title"><br/>
+内容：<textarea rows=5 cols=15 name="con"></textarea><br/>
+<a href="test.php" id="login">登陆</a>
+</body>
+</html>
+<script>
+    window.onload=function  () {
+        // 获取标题、内容、登录
+        var title=document.getElementsByName("title")[0];
+        var con=document.getElementsByName("con")[0];
+        var login=document.getElementById("login");
+        // sessionstorage关闭浏览器就丢失
+        if(sessionStorage.title||sessionStorage.con){
+            // 标题的value和内容的value等于存储的值
+            title.value=sessionStorage.title;
+            con.value=sessionStorage.con;
+        }
+        // 给登录添加单击事件
+        con.onblur=function  () {
+            // 将存储的值赋值回去
+            sessionStorage.title=title.value;
+            sessionStorage.con=con.value;
+        }
+    }
+</script>

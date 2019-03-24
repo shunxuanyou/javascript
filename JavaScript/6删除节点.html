@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            color: red;
+            margin-left: 60px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>第一个节点<span>删除</span></li>
+    <li>第二个节点<span>删除</span></li>
+</ul>
+<input type="text" id="text"><input type="button" value="全部删除" onclick="create()">
+</body>
+</html>
+<script>
+    function create() {
+        // 获取父节点
+        var ul=document.getElementsByTagName('ul')[0];
+        // 获取子节点
+        var lis=ul.children;
+        // 删除子节点
+        ul.removeChild(lis[lis.length-1]);
+    }
+        // 点击span删除所在li
+        var span=document.getElementsByTagName('span');
+        for(var i=0;i<span.length;i++){
+            span[i].onclick=function () {
+               this.parentNode.remove();
+                console.log(this);
+            }
+        }
+
+
+</script>

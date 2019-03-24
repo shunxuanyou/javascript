@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #parent{
+            height: 200px;
+            background: green;
+        }
+        .child{
+            width: 300px;
+            height: 100px;
+            margin: 0 auto;
+            background: chocolate;
+        }
+    </style>
+</head>
+<body>
+<div id="parent"></div>
+<a href="https://www.baidu.com/">百度</a>
+<script>
+    document.getElementById("parent").addEventListener("click",function(event){
+        console.log("事件流标准写法");
+    },false)//事件冒泡
+
+    document.getElementsByTagName("div")[0].addEventListener("click",function (event) {
+        //event（事件对象）兼容写法
+        var event=event||window.event;
+        console.log(event);
+    })
+    // 阻止默认行为
+    document.getElementsByTagName("a")[0].addEventListener("click",function (event) {
+        var event=event||window.event;
+        // 阻止超链接跳转
+        // event.preventDefault();
+        // 兼容写法
+        event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+    })
+    // 阻止默认冒泡
+    document.getElementsByTagName("a")[0].addEventListener("click",function(event){
+        var event=event||window.event;
+        event.stopPropagation()?event.stopPropagation():(event.cacelBubble=true);
+    })
+
+</script>
+
+</body>
+</html>

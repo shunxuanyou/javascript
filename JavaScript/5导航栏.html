@@ -1,0 +1,122 @@
+
+<!DOCTYPE>
+<head>
+    <meta charset="utf-8">
+    <title>下拉菜单</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: lightsteelblue;
+        }
+        ul{
+            list-style: none;
+        }
+        #menu{
+            margin: 0 auto;
+            width: 640px;
+        }
+        #menu li{
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+        #menu li a{
+            width:120px;
+            height:24px;
+            line-height:24px;
+            display:block;
+            text-decoration:none;
+            color:#FFF;
+            background:#9FC355;
+            border-right:1px solid #B9DD71;
+            /*color:#FFF; */
+            font-size:12px;
+        }
+        #menu li a:hover{
+            background: #5A800D;
+        }
+        #menu li p{
+            /*隐藏二级菜单*/
+            display:none;
+            position:absolute;
+            width:220px;
+            height:37px;
+            background:url(img/QQ图片20180423190158.gif);
+            top:23px;
+        }
+        #menu li p a{
+            background:none;
+            width:70px;
+            text-align:center;
+            height:18px;
+            line-height:18px;
+            margin-top:15px;
+            float:left;
+            border-right:none;
+        }
+        #menu li p a:hover{
+            background:none;
+            color:#FFEA00;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        //页面加载完成之后
+        window.onload = function(){
+            var oUl = document.getElementById('menu');
+            var oLi = oUl.getElementsByTagName('li');
+            for(var i=0;i<oLi.length;i++){
+                oLi[i].onmouseover = function(){
+                    if(this.getElementsByTagName('p')[0]){
+                        this.getElementsByTagName('p')[0].style.display = "block";
+                    }
+                }
+                oLi[i].onmouseout = function(){
+                    if(this.getElementsByTagName('p')[0]){
+                        this.getElementsByTagName('p')[0].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+<ul id="menu">
+    <li><a href="#">首页</a>
+        <p><a href="#">公司简介</a>
+            <a href="#">企业理念</a>
+            <a href="#">员工活动</a>
+        </p>
+    </li>
+    <li><a href="#">新闻中心</a>
+        <p><a href="#">公司简介</a>
+            <a href="#">企业理念</a>
+            <a href="#">员工活动</a>
+        </p>
+    </li>
+    <li><a href="#">产品中心</a>
+        <p><a href="#">公司简介</a>
+            <a href="#">企业理念</a>
+            <a href="#">员工活动</a>
+        </p>
+    </li>
+    <li><a href="#">服务中心</a>
+        <p><a href="#">公司简介</a>
+            <a href="#">企业理念</a>
+            <a href="#">员工活动</a>
+        </p>
+    </li>
+    <li><a href="#">员工中心</a>
+        <p><a href="#">公司简介</a>
+            <a href="#">企业理念</a>
+            <a href="#">员工活动</a>
+        </p>
+    </li>
+</ul>
+</body>
+</html>

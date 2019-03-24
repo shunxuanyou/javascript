@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border: 5px solid orange;
+        }
+    </style>
+    <!--引入jQuery-->
+    <script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div>最后一个元素</div>
+    <input type="text">
+</body>
+</html>
+<script>
+  // console.log($("box"));
+  $("#div1").html("hello");
+  console.log($("#div:eq(2)").html());
+  console.log($("div:last").html());
+
+  // $("div").click(function(){
+  //     alert("jQuery绑定事件")
+  // })
+  //
+  // $("div").bind("mouseover",function(){
+  //    alert("通过bind绑定事件");
+  // })
+  document.write("<div>独孤求败</div>");
+
+  $("div").on("click",function(){
+      alert("通过on绑定事件");
+  })
+
+  console.log($(':input').attr('type','radio'));
+</script>

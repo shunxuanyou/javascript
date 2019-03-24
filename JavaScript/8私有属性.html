@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+// 构造函数
+function Cat(name,color) {
+    //公有属性和方法可以在构造函数外调用；私有属性和方法则不能
+    this.name=name;//公有属性
+    var color=color;//私有属性
+    this.getColor=function () {//公有方法
+        console.log(color);//调用私有属性
+    }
+}
+//prototype模式：实现公有不变的方法或属性
+// Cat.prototype.属性/方法
+//实例化对象
+var miaomiao=new Cat("喵喵","白色");
+console.log(miaomiao.name);
+miaomiao.getColor();
+</script>

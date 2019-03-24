@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 952px;
+            height: 440px;
+            position: relative;
+            margin: 0 auto;
+        }
+        #box img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        #box ul{
+            position: absolute;
+            left: 50%;
+            margin-left: -75px;
+            bottom: 23px;
+        }
+        #box ul li{
+            width: 18px;
+            height: 18px;
+            background-color: white;
+            float: left;
+            list-style: none;
+            border-radius: 50%;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 18px;
+            cursor: pointer;
+        }
+        #box .left{
+            width: 30px;
+            height: 100px;
+            background-color: #5E6784;
+            position: absolute;
+            top: 170px;
+            line-height: 90px;
+            text-align: center;
+            font-size: 30px;
+            color: #EAEBF0;
+            cursor: pointer;
+        }
+        #box .right{
+            width: 30px;
+            height: 100px;
+            background-color: #5E6784;
+            position: absolute;
+            right: 0;
+            top: 170px;
+            line-height: 90px;
+            text-align: center;
+            font-size: 30px;
+            color: #EAEBF0;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<div id="box">
+   <img src="img/952-440-1.jpg" alt="">
+   <img src="img/952-440-2.jpg" alt="">
+   <img src="img/952-440-3.jpg" alt="">
+   <img src="img/952-440-4.jpg" alt="">
+   <img src="img/952-440-5.jpg" alt="">
+    <ul>
+        <li style="background-color: red">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="left"><</div>
+    <div class="right">></div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        var c=0;
+        function dsq(){
+          c++;
+          if(c==5){
+              c=0;
+          }
+          $("#box img").eq(c).fadeIn().siblings("img").fadeOut();
+          $("#box ul li").eq(c).css({"background":"#A10000"}).siblings("li").css({"background":"white"});
+        }
+      timer=setInterval(dsq,2000);
+
+        $("#box ul li").mouseover(function(){
+            clearInterval(timer);
+            c=$(this).index();
+            $("#box img").eq(c).stop().fadeIn().siblings("img").stop().fadeOut();
+            $("#box ul li").eq(c).css({"background":"#A10000"}).siblings("li").css({"background":"white"});
+        })
+
+        $("#box ul li").mouseleave(function(){
+            timer=setInterval(dsq,2000);
+        })
+    })
+
+
+    $("#box .left").click(function(){
+        // clearInterval(timer);
+        // $(this).index();
+
+        console.log(this);
+        // $("#box img").eq(c).fadeIn().siblings("img").fadeOut();
+        // $("#box ul li").eq(c).css({"background":"#A10000"}).siblings("li").css({"background":"white"});
+    })
+
+
+
+</script>

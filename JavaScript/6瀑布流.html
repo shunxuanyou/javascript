@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 100%;
+        }
+        ul{
+            list-style: none;
+            border: 1px solid black;
+            width: 30%;
+            float: left;
+            margin-left: 40px;
+        }
+        li{
+            /*background-color: cadetblue;*/
+            background: url(http://www.wwtliu.com/blog/wp-content/uploads/2017/12/cropped-waitan-007.jpg) no-repeat;
+            margin: 10px;
+            font-size: 40px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+</body>
+</html>
+<script>
+    // 页面初始化时，生成一屏li
+    window.onload=function () {
+        // 生成随机高度的li
+        function getHeight(min,max) {
+            return Math.round(Math.random()*(max-min)+min);
+        }
+        console.log(getHeight(100,400));
+    }
+    //创建li
+    function createLi() {
+        // 一次生成10个li
+        for(var i=0;i<10;i++){
+
+        }
+    }
+</script>

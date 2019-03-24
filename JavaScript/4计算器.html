@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .top{
+            width: 468px;
+            height: 513px;
+            background: lemonchiffon;
+        }
+        .top input{
+            width: 374px;
+            height: 45px;
+            margin: 0 40px;
+            text-align: right;
+        }
+        .top div{
+            margin: 0 30px;
+            background: #EFEFEF;
+        }
+        .top span{
+            width: 60px;
+            height: 60px;
+            display: block;
+            float: left;
+            margin: 10px 10px;
+            background: #32FF00;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .top .buttom {
+            width: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h1>计算器</h1>
+        <input type="text" id="input">
+        <div>
+            <span onclick="getName(7)">7</span>
+            <span onclick="getName(8)">8</span>
+            <span onclick="getName(9)">9</span>
+            <span onclick="del()">←</span>
+            <span onclick="clean()">c</span>
+
+            <span onclick="getName(4)">4</span>
+            <span onclick="getName(5)">5</span>
+            <span onclick="getName(6)">6</span>
+            <span onclick="getSign('+')">+</span>
+            <span onclick="getSign('-')">-</span>
+
+            <span onclick="getName(1)">1</span>
+            <span onclick="getName(2)">2</span>
+            <span onclick="getName(3)">3</span>
+            <span onclick="getSign('*')">*</span>
+            <span onclick="getSign('/')">/</span>
+
+            <span class="buttom" onclick="getName(0)">0</span>
+            <span onclick="('.')">.</span>
+            <span class="buttom" onclick="js()">=</span>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    // 获取文本框
+   var input=document.getElementById("input");
+   // 获取数字
+   function getName(x) {
+
+       var m = input.value;  // 得到输入框的值
+       //console.log(typeof m);  //string
+
+       if (m > 0) {
+           input.value = (m + x);
+       } else {
+           input.value = x;
+       }
+   }
+
+    // 获取运算符
+    function getSign(Sign) {
+        console.log(Sign);
+        // 保存第一次输入的数字(全局变量)
+        num = Number(input.value);
+        // 将数字归0，用做第二次输入数字
+        input.value = 0;
+        //将运算符保存成全局变量
+        fh=Sign;
+    }
+
+    // 计算
+    function js() {
+        //第一输入的数字
+        //console.log(num);
+        //第二次输入的数字
+        var num2=Number(input.value);
+       // 运算符
+        console.log(fh);
+        var re=0;
+
+        switch(fh){
+            case "+":
+                re=num+num2;
+                break;
+            case "-":
+                re=num-num2;
+                break;
+            case "*":
+                re=num*num2;
+                break;
+            case "/":
+                re=num/num2;
+                break;
+            default:
+                re=0;
+        }
+        //将运算的结果显示到输入框
+        input.value = re;
+    }
+    //清空
+    function clean(){
+        input.value = 0;
+    }
+    //删除
+    function del(){
+        var str = input.value;
+        input.value = str.slice(0,str.length-1);
+    }
+</script>
