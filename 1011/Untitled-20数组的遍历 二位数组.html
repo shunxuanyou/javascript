@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var fruits=['苹果','鸭梨','水蜜桃','香蕉','仙桃','人参果'];
+    // 遍历数组
+    for(var i=0;i<fruits.length;i++){
+        document.write(fruits[i]+"美哉 ");
+    }
+    document.write("<br>");
+
+    // 遍历二维数组
+    var array=[
+        ['故宫博物院','天坛公园','颐和园','八达岭长城'],
+        ['秦皇岛市山海关景区','保定市安新白洋淀景区','承德避暑山庄及周围寺庙景区'],
+        ['沈阳市植物园','大连老虎滩海洋公园.海洋极地馆','千山风景名胜区','鞍山玉佛山风景名胜区']
+    ]
+    console.log(array.length);
+    console.log(array[0][2]);
+    console.log(array[2][2]);
+    for(var i=0;i<array.length;i++){
+        for(var j=0;j<array[i].length;j++){
+            document.write(array[i][j]+"_hello、");
+        }
+        document.write("<br>");
+    }
+</script>

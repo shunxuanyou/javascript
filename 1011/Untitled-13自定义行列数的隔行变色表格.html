@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+    .row{
+        background: #33b5e5;
+        color: white;
+    }
+    /*.column{*/
+        /*background: pink;*/
+        /*color: blueviolet;*/
+    /*}*/
+</style>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var row=prompt("请输入行数");
+    var col=prompt("请输入列数");
+    document.write(`<table border="1">`);
+    for(var i=0;i<row;i++){
+        // 判断奇偶行数
+        if(i%2==0){
+            document.write(`<tr class="row">`)
+        }else{
+            document.write(`<tr>`);
+        }
+        for(var j=0;j<col;j++){
+            if(j%2==0){
+                document.write(`<td class="column">${i}行${j}列</td>`);
+            }else{
+                document.write(`<td>${i}行${j}列</td>`);
+            }
+
+        }
+        document.write(`<tr>`);
+    }
+    document.write(`</table>`);
+</script>

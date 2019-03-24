@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<script>
+    //用原生形式创建对象（也叫作json格式）
+    var iphone9={
+        color:"土豪金",
+        price:"8000元",
+        size:"5.4寸",
+        weight:"200g",
+        chat:function(){
+            alert('能聊天')
+        },
+        call:function(){
+            alert('能打电话')
+        },
+    }
+
+    console.log(iphone9.color);
+	//删除对象中的属性和方法：
+	delete iphone9.color;
+    console.log(iphone9.color);
+
+    //销毁对象
+    // iphone9=null;
+
+    //对象的遍历
+    for(x in iphone9){
+        console.log(x);
+        console.log(x+":"+iphone9[x]);
+    }
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+    function qcf(arr) {
+        // 让i号元素和它后面的元素进行比较
+        for(var i=0;i<arr.length;i++){
+            // 循环i元素后面的元素,让后面的元素挨个和i号元素进行比较
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    // 删除j号元素
+                    arr.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
+    var shuzu=['q','r','r','f','f','f','f','s','d','f','g','h','j','h','f','d','d'];
+    var re=qcf(shuzu);
+    document.write(re+"<br>");
+</script>
+
+<script>
+    function qcf2(arr) {
+        // 去掉重复值之后的数组
+        var temp=[];
+        for(var i=0;i<arr.length;i++){
+            // 判断arr[i]的值是否已经存在
+            if(temp.indexOf(arr[i])==-1){//不存在
+                temp.push(arr[i]);//将值添加到temp中
+            }
+        }
+        return temp;
+    }
+    var shuzu=['q','r','r','f','f','f','f','s','d','f','g','h','j','h','f','d','d'];
+    var re=qcf2(shuzu);
+    document.write(re);
+</script>

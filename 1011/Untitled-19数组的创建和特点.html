@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+    //undefined、null、number、string、boolean、object（变量和函数的集合体）
+
+    // 使用字面量创建数组
+    var fruits=['苹果','鸭梨','水蜜桃','香蕉','西瓜',132];
+    // alert(fruits.length)
+    document.write(fruits[0]+"<br>");
+
+    // 数据的替换
+    fruits[1]="火龙果";
+    document.write(fruits+"<br>");
+
+    // 向元素的末尾新增元素
+    fruits[fruits.length]="芒果";
+    fruits[fruits.length]="橙子";
+    document.write(fruits);
+</script>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // 使用Array构造函数创建数组
+    var arr=new Array(20,'独孤求败','殇不患');
+    console.log([arr.length]);
+</script>
+

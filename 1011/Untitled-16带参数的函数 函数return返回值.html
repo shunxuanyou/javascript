@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+    <script type="text/javascript">
+        //创建函数的步骤:
+        //1)先想清楚你要实现的功能;2)把函数的框架搭建起来(声明函数);3)确定需要的参数;4)安排处理流程
+        function pf(x){//形参
+            var re=x*x;
+            document.write(re+"<br>");
+        }
+        pf(12);//实参
+
+    </script>
+
+    <script type="text/javascript">
+        function cj(x,y,z){
+            var re=x*y*z;
+            document.write(re+"<br>")
+        }
+        cj(3,6,5,5,6);
+        //如果实参的个数多于形参的个数,那么多余的参数会被忽略,但不会出现错误
+    </script>
+
+    <script>
+        // 求多个数的和 arguments对象
+        function sum() {
+            var value=0;
+            for(var i=0;i<arguments.length;i++){
+                value+=arguments[i];
+            }
+            console.log(value);
+        }
+        sum(10,20,30);
+    </script>
+
+    <!--函数遇到return之后会立即返回结果，并且停止函数的执行-->
+    <script type="text/javascript">
+        function cj(x,y,z){
+            var re=x*y*z;
+            return re;
+        }
+        var result=cj(4,5,6);
+        console.log(result);
+        var result2=cj(4,5,9);
+        console.log(result2);
+    </script>
+
+</head>
+
+<body>
+<p>
+    <img src="images/360截图20171017203555486.jpg" height="489" width="831"/>
+</p>
+    <img src="images/360截图20171018165928977.jpg" height="72" width="1016"/></body>
+</html>

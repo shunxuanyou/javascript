@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript">
+var age=18;
+while(age<=30){
+	document.write(age+"岁领钱<br/>");
+	age++;
+}
+<!--for循环一般用在有明确循环次数的情况下，而while则一般用在没有明确循环次数的情况下-->
+</script><br/>
+
+
+<script>
+var age=88;
+do{
+	document.write(age+"岁领钱<br/>");
+	age++;
+}while(age<=60);
+<!--do while循环不管三七二十一,先执行一次,然后再判断条件是否成立，while则相反-->
+</script><br>
+
+
+<script>
+var age=18;
+while(age<=30){
+	 if(age==25){
+         // age++
+         //跳出本次循环，直接进入下一次循环判断
+         // continue;
+
+	     //结束整个循环
+	     break;
+    }
+	document.write(age+"岁零钱！<br/>");
+	age++;
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>
